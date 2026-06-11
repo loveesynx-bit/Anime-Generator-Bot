@@ -22,7 +22,7 @@ async def root_route_handler(request):
     return web.FileResponse(file_path)
 
 
-class Private_Bots(Client):
+class XylonBots(Client):
 
     def __init__(self):
         super().__init__(
@@ -85,4 +85,4 @@ class Private_Bots(Client):
         os.remove("my_app.session")
 
 
-Private_Bots().run()
+XylonBots().run()

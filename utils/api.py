@@ -7,7 +7,11 @@ from modules.enums import PicCategory, PicType
 
 def generate_pic(type: PicType, category: PicCategory) -> str:
     json_data = False
-    response = requests.get(URL.API.format(type=type.value, category=category.value))
+    params = {
+        "IncludedTags": category.value,
+        "IsNsfw": "True" if type == PicType.NSFW else "False",
+    }
+    response = requests.get(URL.API, params=params, headers=URL.HEARDERS)
     try:
         response.raise_for_status()
     except RequestException:
@@ -16,4 +20,4 @@ def generate_pic(type: PicType, category: PicCategory) -> str:
         json_data = response.json()
     except JSONDecodeError:
         return
-    return json_data["url"] if not json_data == False else None
+    return json_data["items"][0]["url"] if json_data and json_data.get("items") else None

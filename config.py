@@ -15,7 +15,7 @@ class BOT:
 
     TOKEN = os.environ.get("TOKEN", "")
     USERNAME = "@AIanimeGenBot"
-    SOURCE = "https://github.com/prime-hritu/Anime-Generator-Bot"
+    SOURCE = "https://github.com/Private-Bots-Official/Anime-Generator-Bot"
 
 
 class API:
@@ -49,10 +49,10 @@ class FORCE:
 
     FORCE_SUB = os.environ.get("FORCE", "")
     FORCE_BOOL = True if str(FORCE_SUB).lower() == "true" else False
-    CHANNEL_LINK = os.environ.get("CHANNEL_LINK", "")  # https://t.me/Private_Bots
+    CHANNEL_LINK = os.environ.get("CHANNEL_LINK", "")  # https://t.me/XylonBots
     CHANNEL_USERNAME = os.environ.get(
         "CHANNEL_USERNAME", ""
-    )  # with @ ( @Private_Bots )
+    )  # with @ ( @XylonBots )
 
 
 class OWNER:
@@ -68,7 +68,7 @@ class URL:
     ❌ DON'T TOUCH THIS ⚠️
     """
 
-    API = "https://api.waifu.pics/{type}/{category}"
+    API = "https://api.waifu.im/images"
     HEARDERS = {"User-Agent": UserAgent().chrome()}
 
 

@@ -1,12 +1,12 @@
-from pyrogram import Client as Private_Bots
+from pyrogram import Client as XylonBots
 from modules.enums import PicCategory, PicType
 from pyrogram.types import Message, CallbackQuery, InputMediaPhoto
 from translation import INLINE, TEXT
 from utils.api import generate_pic
 
 
-@Private_Bots.on_callback_query()
-async def handle_callback(client: Private_Bots, query: CallbackQuery):
+@XylonBots.on_callback_query()
+async def handle_callback(client: XylonBots, query: CallbackQuery):
     data: str = query.data
     message: Message = query.message
     """Not adding any condition coz it has only one type of callback"""
