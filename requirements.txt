@@ -1,6 +1,6 @@
 aiohttp==3.14.0
 Pyrogram==2.0.106
-Requests==2.32.3
+Requests==2.33.0
 UserAgentReplica==1.1.1
 TgCrypto
 python-dotenv==1.0.1
