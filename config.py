@@ -14,7 +14,7 @@ class BOT:
     """
 
     TOKEN = os.environ.get("TOKEN", "")
-    USERNAME = "@AIanimeGenBot"
+    USERNAME = "@DictionaryXproBot"
     SOURCE = "https://github.com/Private-Bots-Official/Anime-Generator-Bot"
 
 
