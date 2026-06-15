@@ -1,4 +1,4 @@
-from pyrogram import Client as XylonBots
+from pyrogram import Client as SynaxBots
 from pyrogram import filters
 from pyrogram.types import Message, ChatMember, Chat
 from pyrogram.enums import ChatMemberStatus
@@ -15,8 +15,8 @@ from database.users import get_served_users, add_served_user
 import random
 
 
-@XylonBots.on_message(filters.command("status"))
-def show_status(client: XylonBots, message: Message):
+@SynaxBots.on_message(filters.command("status"))
+def show_status(client: SynaxBots, message: Message):
     if not int(message.chat.id) == int(OWNER.ID):
         return
     msg: Message = message.reply_text(
@@ -26,8 +26,8 @@ def show_status(client: XylonBots, message: Message):
     msg.edit(TEXT.STATUS.format(total_users))
 
 
-@XylonBots.on_message(filters.private & filters.command("broad"))
-def broadcaster(c: XylonBots, m: Message):
+@SynaxBots.on_message(filters.private & filters.command("broad"))
+def broadcaster(c: SynaxBots, m: Message):
     if not int(m.chat.id) == int(OWNER.ID):
         return m.delete()
     m.reply_text(TEXT.START, reply_to_message_id=m.id)
@@ -41,13 +41,13 @@ def broadcaster(c: XylonBots, m: Message):
     )
 
 
-@XylonBots.on_message(filters.incoming)
-async def handle_message(XylonBots: XylonBots, message: Message):
+@SynaxBots.on_message(filters.incoming)
+async def handle_message(SynaxBots: SynaxBots, message: Message):
     add_served_user(message.chat.id)
     if FORCER.FORCE_BOOL == True:
         FORCE = False
         try:
-            got_chat_member: ChatMember = await XylonBots.get_chat_member(
+            got_chat_member: ChatMember = await SynaxBots.get_chat_member(
                 FORCER.CHANNEL_USERNAME, message.chat.id
             )
             if not got_chat_member.status in [
@@ -59,7 +59,7 @@ async def handle_message(XylonBots: XylonBots, message: Message):
         except UserNotParticipant:
             FORCE = True
         if FORCE == True:
-            chat: Chat = await XylonBots.get_chat(FORCER.CHANNEL_USERNAME)
+            chat: Chat = await SynaxBots.get_chat(FORCER.CHANNEL_USERNAME)
             chat_title = chat.title
             add_members_id(message.chat.id)
             return await message.reply_photo(
