@@ -15,7 +15,7 @@ class BOT:
 
     TOKEN = os.environ.get("TOKEN", "")
     USERNAME = "@AnimeGenSynaxBot"
-    SOURCE = "https://github.com/Synaxbots/AnimeGenSYNAXBot"
+    SOURCE = "https://t.me/synaxbotz"
 
 
 class API:
@@ -52,7 +52,7 @@ class FORCE:
     CHANNEL_LINK = os.environ.get("CHANNEL_LINK", "")  # https://t.me/XylonBots
     CHANNEL_USERNAME = os.environ.get(
         "CHANNEL_USERNAME", ""
-    )  # with @ ( @XylonBots )
+    )  # with @ ( @synaxbotz )
 
 
 class OWNER:
