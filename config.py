@@ -14,7 +14,7 @@ class BOT:
     """
 
     TOKEN = os.environ.get("TOKEN", "")
-    USERNAME = "@DictionaryXproBot"
+    USERNAME = "@AnimeGenSynaxBot"
     SOURCE = "https://github.com/Synaxbots/AnimeGenSYNAXBot"
 
 
