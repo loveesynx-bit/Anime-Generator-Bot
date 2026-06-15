@@ -1,4 +1,4 @@
-from pyrogram import Client as XylonBots
+from pyrogram import Client as SynaxBots
 from pyrogram import filters
 from database import MONGO, check_mongo
 from database.members import get_all_members_ids, remove_members_id
@@ -10,8 +10,8 @@ from utils.api import generate_pic
 import random
 
 
-@XylonBots.on_chat_member_updated(filters.user(get_all_members_ids()))
-def handle_member_update(client: XylonBots, update: ChatMemberUpdated):
+@SynaxBots.on_chat_member_updated(filters.user(get_all_members_ids()))
+def handle_member_update(client: SynaxBots, update: ChatMemberUpdated):
     if (
         update.new_chat_member
         and not update.old_chat_member
